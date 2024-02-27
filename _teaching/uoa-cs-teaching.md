@@ -8,8 +8,6 @@ date: 2023-08-21
 location: "Auckland, New Zealand"
 ---
 
-This is a description of a teaching experience.
-
 COMPSCI 340/2023S2 Operating System
 ======
 
