@@ -2,7 +2,7 @@
 title: "A dynamically reconfigurable QC-LDPC implementation for iris recognition"
 collection: publications
 permalink: /publication/2021-10-12-dynamic-iris
-excerpt: 'A highly integrated system-on-chip for the on-board unit in the electronic toll collection system is presented.'
+excerpt: 'Extracting and analyzing iris textures for biometric recognition has been extensively studied.'
 date: 2021-10-12
 venue: '2021 IEEE 10th Global Conference on Consumer Electronics (GCCE)'
 paperurl: '[https://ieeexplore.ieee.org/abstract/document/9622039/](https://ieeexplore.ieee.org/abstract/document/9622068/)'
