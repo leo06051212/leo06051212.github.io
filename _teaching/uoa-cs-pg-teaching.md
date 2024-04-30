@@ -39,9 +39,12 @@ Dongwei Yan (2024- Now)
 
 Master of Information and Technology (Internship)
 ======
+
 Han(Olivia) Li (2023-2024)
 ------
+
 Roshan Shaheen (2023-2024)
 ------
+
 Rupak Lingwal (2023-2024)
 ------
