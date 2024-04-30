@@ -2,7 +2,7 @@
 title: "An effective multi-mode iris authentication system on a microprocessor-FPGA heterogeneous platform with QC-LDPC codes"
 collection: publications
 permalink: /publication/2021-12-08-multi-iris
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'Multiple iris recognition algorithm implemented on an SoC-FPGA platform'
 date: 2021-12-08
 venue: 'IEEE Access'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/9642996/'
