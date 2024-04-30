@@ -83,7 +83,7 @@ author:
   name             : "Dr.Sean Ma"
   avatar           : "18096Phd'S-31.jpg"
   bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  location         : "Auckland, New Zealand"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=zDtLcAUAAAAJ&hl=en"
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : #"replacethistwitterhandle"
   vine             :
   weibo            :
   xing             :
