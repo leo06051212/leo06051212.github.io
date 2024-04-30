@@ -82,10 +82,10 @@ analytics:
 author:
   name             : "Dr.Sean Ma"
   avatar           : "18096Phd'S-31.jpg"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "Lecturer/PhD Supervisor/IC Design Engineer/Husband"
   location         : "Auckland, New Zealand"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=zDtLcAUAAAAJ&hl=en"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : #"academicpages"
   google_plus      :
   keybase          :
   instagram        :
