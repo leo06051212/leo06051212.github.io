@@ -9,7 +9,7 @@ paperurl: 'https://ieeexplore.ieee.org/abstract/document/9642996/'
 citation: 'Ma, L., Sham, C. W., Lo, C. Y., & Zhong, X. (2021). An effective multi-mode iris authentication system on a microprocessor-fpga heterogeneous platform with qc-ldpc codes. IEEE Access, 9, 163665-163674.'
 ---
 
-[Download paper here]([http://academicpages.github.io/files/paper1.pdf](https://ieeexplore.ieee.org/abstract/document/9642996/))
+[Download paper here](https://ieeexplore.ieee.org/abstract/document/9642996/)
 
 Recommended citation: 
 ```
