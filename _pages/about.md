@@ -1,12 +1,22 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+Sean Longyu Ma is a Lecturer in the School of Computer Science.
+Sean received his Bachelor's degree (Communication) from Harbin Engineering University in 2010, his Master's degree in Integrated Circuit from Shanghai Jiao Tong University in 2016, and his PhD from the University of Auckland in 2023.
+Sean has almost ten years of industrial experience, working as an FPGA & integrated circuit design engineer. 
+His research areas are as follows: 
+1. Digital design using FPGA platforms
+1. RISC-V core customization, including sub-system integration or customized instructions. 
+1. The algorithm (not subject to Error correction codes) implementation using parallel computing devices such as FPGAs. 
+1. High-level Synthesis design using FPGAs
+He is actively looking for driven individuals interested in working toward a PhD or research-based Master's degree under his supervision.
 
 This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
 
