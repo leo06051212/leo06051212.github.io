@@ -1,5 +1,5 @@
 ---
-title: "UoA Teaching experience"
+title: "UoA Postgraduate Supervision experience"
 collection: teaching
 type: "Postgraduate supervision"
 permalink: /teaching/uoa-cs-pg-teaching
