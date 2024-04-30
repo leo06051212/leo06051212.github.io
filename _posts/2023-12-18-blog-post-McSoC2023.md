@@ -10,4 +10,4 @@ tags:
 
 I was invited to attend McSoC 2023 in Singapore.
 
-![McSoC2023](../images/McSoC2023.png)
+![McSoC2023](https://leo06051212.github.io/images/McSoC2023.png)
