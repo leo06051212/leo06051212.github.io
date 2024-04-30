@@ -10,6 +10,7 @@ location: "Auckland, New Zealand"
 
 Doctor of Philosophy in Computer Science
 ======
+
 Jiale Li (2023- Now)
 ------
 >The Computer Architecture for Edge Artificial Intelligence
