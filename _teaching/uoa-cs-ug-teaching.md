@@ -2,6 +2,7 @@
 title: "UoA Undergraduate Teaching experience"
 collection: teaching
 type: "Undergraduate course"
+permalink: /teaching/uoa-cs-ug-teaching
 venue: "The University of Auckland, School of Computer Science"
 date: 2023-08-21
 location: "Auckland, New Zealand"
