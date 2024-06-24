@@ -8,6 +8,12 @@ date: 2023-08-21
 location: "Auckland, New Zealand"
 ---
 
+COMPSCI 110 Introduction to Computer Systems (2024S2)
+======
+
+COMPSCI 315 Data Communications Technologies (2024S2)
+======
+
 COMPSCI 215 Data Communication (2024S1)
 ======
 
