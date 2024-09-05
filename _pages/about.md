@@ -17,4 +17,4 @@ His research areas are as follows:
 1. The algorithm (not subject to Error correction codes) implementation using parallel computing devices such as FPGAs. 
 1. High-level Synthesis design using FPGAs
 
-He is actively looking for driven individuals interested in working toward a PhD or research-based Master's degree under his supervision.
+He is actively looking for driven individuals interested in working toward a PhD or research-based Master's degree under his supervision. Applicants are preferrable to have a solid background in CS/EE, particularly FPGA/GPU, circuits and systems, machine learning and a strong interest in integrative cross-disciplinary projects.
