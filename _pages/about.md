@@ -18,3 +18,23 @@ His research areas are as follows:
 1. High-level Synthesis design using FPGAs
 
 He is actively looking for driven individuals interested in working toward a PhD or research-based Master's degree under his supervision. Applicants are preferrable to have a solid background in CS/EE, particularly FPGA/GPU, circuits and systems, machine learning and a strong interest in integrative cross-disciplinary projects.
+
+Join us and you will have the opportunity to:
+
+(a) Receive careful guidance from professional academic staff, learn techniques for writing and publishing scholarly articles, and publish papers at high-level international conferences/journals, laying a solid foundation for continuing in research or academic positions in the future.
+
+(b) Engage in cutting-edge scientific research in the fields of artificial intelligence algorithms implementation, RISC-V customization and heterogeneous computing. Access the latest technologies, and broaden your horizons.
+
+(c) Utilize the abundant GPU server resources in our lab, with each Ph.D. student having access to the latest graphics cards (A100/H100/4090), allowing for the fastest data acquisition for research.
+
+(d) Work with the latest FPGA platforms in the industry, including:
+
+AMD Versal AI Core Series VCK190 Evaluation Kit
+AMD VCU128 Development Kit
+AMD U250 Development Kit
+AMD Zync ZCU102 Development Kit
+AMD KV260/KR260 Development Kit
+AMD VCU118 Development Kit
+AMD Zync ZCU104 Development Kit
+AMD Virtex VCU1525 Development Kit 
+AMD Kintex KCU1500 Development Kit
