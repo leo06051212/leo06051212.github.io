@@ -30,11 +30,20 @@ Join us and you will have the opportunity to:
 (d) Work with the latest FPGA platforms in the industry, including:
 
 AMD Versal AI Core Series VCK190 Evaluation Kit
+
 AMD VCU128 Development Kit
+
 AMD U250 Development Kit
+
 AMD Zync ZCU102 Development Kit
+
 AMD KV260/KR260 Development Kit
+
 AMD VCU118 Development Kit
+
 AMD Zync ZCU104 Development Kit
+
 AMD Virtex VCU1525 Development Kit 
+
 AMD Kintex KCU1500 Development Kit
+
