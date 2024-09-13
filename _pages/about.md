@@ -25,7 +25,7 @@ Join us and you will have the opportunity to:
 
 (b) Engage in cutting-edge scientific research in the fields of artificial intelligence algorithms implementation, RISC-V customization and heterogeneous computing. Access the latest technologies, and broaden your horizons.
 
-(c) Utilize the abundant GPU server resources in our lab, with each Ph.D. student having access to the latest graphics cards (A100/H100/4090), allowing for the fastest data acquisition for research.
+(c) Utilize the abundant GPU server resources in our lab, with each Ph.D. student having access to the latest graphics cards (A100/4090), allowing for the fastest data acquisition for research.
 
 (d) Work with the latest FPGA platforms in the industry, including:
 
