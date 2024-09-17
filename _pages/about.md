@@ -35,13 +35,13 @@ AMD VCU128 Development Kit
 
 AMD U250 Development Kit
 
-AMD Zync ZCU102 Development Kit
+AMD Zynq ZCU102 Development Kit
 
 AMD KV260/KR260 Development Kit
 
 AMD VCU118 Development Kit
 
-AMD Zync ZCU104 Development Kit
+AMD Zynq ZCU104 Development Kit
 
 AMD Virtex VCU1525 Development Kit 
 
