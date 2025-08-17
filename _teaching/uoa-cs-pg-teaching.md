@@ -10,6 +10,9 @@ location: "Auckland, New Zealand"
 
 Doctor of Philosophy in Computer Science
 ======
+Xu Chen (2025- Now)
+------
+>Research on Neural Network Circuit and Computing-in-Memory Accelerator Based on Memristor
 
 Jiale Li (2023- Now)
 ------
@@ -23,18 +26,26 @@ Zongcheng Yue (2022- Now)
 ------
 >Computational Architecture for Intelligent Edge Computing
 
-Brian Zhong (2019- Now)
+Brian Zhong (2019- 2025, Graduated)
 ------
 >A Comprehensive Study on RISC-V's Applications to AIoT Endpoint SoCs
 
 Master of Science (Research)
 ======
+Taojingnan Wang (2025-Now)
+------
+Ziyuan Zhang (2025-Now)
+------
+Chenge Gao (2025-Now)
+------
+Chen Chen (2025-Now)
+------
 
-Yulin Fu (2024- Now)
+Yulin Fu (2024- 2025, Graduated)
 ------
 >FPGA-Adapted Neural Network Models for Low-Latency, High-Accuracy Image recognition: An Integrated Approach
 
-Dongwei Yan (2024- Now)
+Dongwei Yan (2024- 2025, Graduated)
 ------
 >Effective Progressive Quantization: Enhancing Residual Neural Networks with Ultra-Low Precision Validation on ResNet18 and ResNet50
 
@@ -49,3 +60,4 @@ Roshan Shaheen (2023-2024)
 
 Rupak Lingwal (2023-2024)
 ------
+
