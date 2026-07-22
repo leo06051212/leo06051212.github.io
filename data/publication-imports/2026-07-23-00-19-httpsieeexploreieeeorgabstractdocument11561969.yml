@@ -1,4 +1,5 @@
 source: https://ieeexplore.ieee.org/abstract/document/11561969
 publication_type: paper-conference
 featured: true
-status: pending
+status: failed
+error: Enter a valid DOI or IEEE Xplore URL
