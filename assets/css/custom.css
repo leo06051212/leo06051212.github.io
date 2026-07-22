@@ -1,0 +1,33 @@
+:root {
+  --sean-paper: #fbfaf7;
+  --sean-ink: #1e2b38;
+  --sean-muted: #626a72;
+  --sean-accent: #8b5a2b;
+  --sean-rule: #d8d3c8;
+  --sean-interface-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--sean-paper); color: var(--sean-ink); }
+h1, h2, h3 { letter-spacing: -0.015em; text-wrap: balance; }
+a { text-underline-offset: 0.18em; }
+.navbar, header { border-bottom: 1px solid var(--sean-rule); }
+nav,
+.navbar,
+.nav-link,
+.nav-dropdown-link,
+button,
+input,
+select,
+textarea,
+[role="button"],
+.btn,
+#section-resume-biography-3 a[href$="/uploads/sean-ma-cv.pdf"],
+.page-footer,
+footer { font-family: var(--sean-interface-font); }
+.prose { max-width: 72ch; }
+.page-footer, footer { border-top: 1px solid var(--sean-rule); }
+@media (max-width: 640px) {
+  h1 { font-size: clamp(2rem, 10vw, 3rem); }
+  .prose { font-size: 1rem; }
+}

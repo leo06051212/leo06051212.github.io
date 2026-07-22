@@ -1,0 +1,53 @@
+hugoblox:
+  identity:
+    name: "Sean Ma"
+    organization: "The University of Auckland"
+    type: person
+    tagline: "FPGA, RISC-V, and accelerated computing"
+    description: "Academic website of Dr Sean Longyu Ma, Lecturer in Computer Science at the University of Auckland."
+  theme:
+    mode: light
+    pack: "default"
+    colors:
+      primary: "#8B5A2B"
+      secondary: "#243746"
+      neutral: "stone"
+    surfaces:
+      background: "#FBFAF7"
+      foreground: "#1E2B38"
+      header:
+        background: "#FBFAF7"
+        foreground: "#1E2B38"
+  typography:
+    pack: "academic"
+  layout:
+    radius: "sm"
+    spacing: "spacious"
+    avatar_shape: square
+  header:
+    enable: true
+    style: navbar-simple
+    sticky: true
+    align: right
+    search: true
+    theme_toggle: false
+    theme_picker: false
+    language_switcher: false
+  footer:
+    style: minimal
+    language_switcher: false
+  copyright:
+    notice: "© {year} Sean Longyu Ma"
+    license:
+      type: custom
+      allow_derivatives: false
+      share_alike: false
+      allow_commercial: false
+  content:
+    citations:
+      style: ieee
+  repository:
+    enable: true
+    url: "https://github.com/leo06051212/leo06051212.github.io"
+    branch: master
+    content_dir: content

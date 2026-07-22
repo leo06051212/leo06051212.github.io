@@ -1,0 +1,48 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Dr Sean Longyu Ma
+  given: Sean Longyu
+  family: Ma
+  alternate: ''
+  pronunciation: ''
+  pronouns: he/him
+postnominals:
+  - PhD
+role: Lecturer in Computer Science
+bio: |
+  Sean Longyu Ma is a Lecturer in the School of Computer Science at the
+  University of Auckland. His research focuses on FPGA-based computing,
+  RISC-V customisation, high-level synthesis, and heterogeneous computing.
+affiliations:
+  - name: The University of Auckland
+    url: https://www.auckland.ac.nz/
+links:
+  - icon: at-symbol
+    url: mailto:sean.ma@auckland.ac.nz
+    label: Email
+  - icon: building-library
+    url: https://profiles.auckland.ac.nz/sean-ma
+    label: University profile
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=zDtLcAUAAAAJ&hl=en
+    label: Google Scholar
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0002-3350-004X
+    label: ORCID
+interests:
+  - FPGA acceleration
+  - RISC-V customisation
+  - High-level synthesis
+  - Heterogeneous computing
+education:
+  - degree: PhD in Computer Science
+    institution: The University of Auckland
+    end: 2023-12-31
+  - degree: Master of Integrated Circuit Engineering
+    institution: Shanghai Jiao Tong University
+    end: 2016-12-31
+  - degree: Bachelor of Communication Engineering
+    institution: Harbin Engineering University
+    end: 2010-12-31
