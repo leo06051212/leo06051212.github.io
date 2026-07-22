@@ -1,4 +1,7 @@
 source: 10.1109/ISCAS66217.2026.11561969
 publication_type: paper-conference
 featured: false
-status: pending
+status: processed
+result_path: content/publications/2026-efficient-fpga-deployment-of-power-of-two-quantized-networks-via-dynamic-hierarchical
+error: ''
+processed_at: '2026-07-22T12:26:56.716841+00:00'
