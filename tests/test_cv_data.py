@@ -676,7 +676,15 @@ class CvDataTests(unittest.TestCase):
         validator(expanded)
 
         missing_cases = {
-            "publication": replace(document, publications=document.publications[1:]),
+            "publication": replace(
+                document,
+                publications=tuple(
+                    item
+                    for item in document.publications
+                    if item.bundle_path
+                    != next(iter(cv_data.CV_BASELINE_PUBLICATION_BUNDLES))
+                ),
+            ),
             "interest": replace(
                 document,
                 author=replace(

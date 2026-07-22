@@ -9,7 +9,7 @@ import unittest
 from reportlab.pdfgen import canvas
 import yaml
 
-from scripts.cv_data import load_cv_document
+from scripts.cv_data import cv_content_counts, cv_content_manifest, load_cv_document
 from scripts.cv_pdf import render_cv_pdf
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,10 +22,7 @@ MANDATORY_CV_SECTIONS = (
     "Invited Talks & Presentations",
     "Teaching",
 )
-VALID_CV_MANIFEST = (
-    "Academic curriculum vitae | publications=33;interests=4;education=3;"
-    "talks=7;teaching=1"
-)
+VALID_CV_MANIFEST = cv_content_manifest(cv_content_counts(load_cv_document(ROOT)))
 
 
 def load_checker():
@@ -230,6 +227,7 @@ class BuiltSiteCheckTests(unittest.TestCase):
         checker = load_checker()
         shutil.copytree(ROOT / "data", self.root / "data")
         shutil.copytree(ROOT / "content", self.content)
+        original_publication_count = len(load_cv_document(self.root).publications)
         future = {
             "title": "Future managed publication",
             "authors": ["me", "Future Researcher"],
@@ -260,7 +258,7 @@ class BuiltSiteCheckTests(unittest.TestCase):
             encoding="utf-8",
         )
         document = load_cv_document(self.root)
-        self.assertEqual(len(document.publications), 34)
+        self.assertEqual(len(document.publications), original_publication_count + 1)
         self.public.mkdir(parents=True)
         (self.public / "index.html").write_text(
             "<html><title>Home</title></html>", encoding="utf-8"
