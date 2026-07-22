@@ -263,6 +263,32 @@ class SiteContractTests(unittest.TestCase):
             fields = {field["name"]: field for field in collections[name]["fields"]}
             self.assertTrue(fields["draft"]["default"])
 
+        blog_fields = {
+            field["name"]: field for field in collections["blog"]["fields"]
+        }
+        self.assertIn("image", blog_fields)
+        self.assertEqual(blog_fields["image"]["type"], "image")
+        self.assertFalse(blog_fields["image"].get("required", False))
+        self.assertEqual(
+            blog_fields["image"]["options"],
+            {
+                "media": "blog_images",
+                "path": "blog",
+                "extensions": ["jpg", "png", "webp"],
+                "rename": "safe",
+            },
+        )
+        self.assertEqual(
+            blog_fields["body"]["options"],
+            {
+                "media": "blog_images",
+                "path": "blog",
+                "extensions": ["jpg", "png", "webp"],
+                "rename": "safe",
+                "switcher": True,
+            },
+        )
+
         import_fields = {
             field["name"]: field for field in collections["publication_imports"]["fields"]
         }
@@ -273,8 +299,19 @@ class SiteContractTests(unittest.TestCase):
         profile_fields = {field["name"] for field in collections["profile"]["fields"]}
         self.assertEqual(profile_fields, {"role", "bio", "interests"})
 
-        self.assertEqual(cms["media"]["input"], "static/uploads")
-        self.assertEqual(cms["media"]["output"], "/uploads")
+        self.assertEqual(
+            cms["media"],
+            [
+                {
+                    "name": "blog_images",
+                    "label": "Blog images",
+                    "input": "static/uploads",
+                    "output": "/uploads",
+                    "extensions": ["jpg", "png", "webp"],
+                    "rename": "safe",
+                }
+            ],
+        )
         self.assertIs(cms.get("settings", {}).get("content", {}).get("merge"), True)
 
         def cms_fields(value):
