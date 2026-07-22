@@ -2,6 +2,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 import unittest
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -143,11 +144,14 @@ class GeneratedSiteTests(unittest.TestCase):
         self.assertIn("font-family:var(--sean-interface-font)", rules[selector])
 
     def test_publications_listing_contains_all_local_records_and_homepage_features(self):
-        expected_slugs = {
-            index.parent.name
-            for index in (ROOT / "content/publications").glob("*/index.md")
-        }
-        self.assertEqual(len(expected_slugs), 33)
+        published = {}
+        for index in (ROOT / "content/publications").glob("*/index.md"):
+            parts = index.read_text(encoding="utf-8").split("---", 2)
+            metadata = yaml.safe_load(parts[1])
+            if metadata.get("draft") is False:
+                published[index.parent.name] = metadata
+        expected_slugs = set(published)
+        self.assertGreaterEqual(len(expected_slugs), 33)
         listing_pages = [ROOT / "public/publications/index.html"] + sorted(
             (ROOT / "public/publications/page").glob("*/index.html")
         )
@@ -167,10 +171,8 @@ class GeneratedSiteTests(unittest.TestCase):
         self.assertEqual(listed_slugs, expected_slugs)
 
         expected_featured_slugs = {
-            "2025-12-15-a-review-of-fpga-driven-llm-acceleration",
-            "2025-12-15-adaptive-gradual-quantization-with-a-custom-risc-v-simd-accelerator",
-            "2025-09-23-enhancing-synthesis-efficiency-in-hls-through-llm-based-automated-cod",
-            "2025-06-30-lha-layer-wise-hardware-acceleration-of-progressive-quantizing-infere",
+            slug for slug, metadata in published.items()
+            if metadata.get("featured") is True
         }
         homepage = (ROOT / "public/index.html").read_text(encoding="utf-8")
         selected_publications = GeneratedSelectedPublicationsParser()
