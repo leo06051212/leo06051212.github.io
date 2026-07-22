@@ -69,10 +69,7 @@ content:
     subfolders: true
     exclude: [_index.md]
     view:
-      layout: tree
-      node:
-        filename: index.md
-        hideDirs: others
+      layout: list
       primary: title
       fields: [title, date, draft, featured]
     operations:

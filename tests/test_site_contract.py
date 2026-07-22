@@ -108,7 +108,7 @@ class SiteContractTests(unittest.TestCase):
         )
         self.assertNotIn("count", selected["content"])
 
-    def test_existing_publications_remain_published_and_featured(self):
+    def test_existing_publications_remain_published_with_editable_featured_selection(self):
         indexes = sorted((ROOT / "content/publications").glob("*/index.md"))
         self.assertGreaterEqual(len(indexes), 33)
         featured = set()
@@ -124,14 +124,7 @@ class SiteContractTests(unittest.TestCase):
             if metadata.get("draft") is False and metadata.get("featured") is True:
                 featured.add(index.parent.name)
 
-        self.assertTrue(
-            {
-                "2025-12-15-a-review-of-fpga-driven-llm-acceleration",
-                "2025-12-15-adaptive-gradual-quantization-with-a-custom-risc-v-simd-accelerator",
-                "2025-09-23-enhancing-synthesis-efficiency-in-hls-through-llm-based-automated-cod",
-                "2025-06-30-lha-layer-wise-hardware-acceleration-of-progressive-quantizing-infere",
-            }.issubset(featured),
-        )
+        self.assertTrue(featured, "at least one published publication must be featured")
 
     def test_research_page_contains_approved_official_profile_summary(self):
         metadata = self.load_frontmatter(ROOT / "content/research/_index.md")
@@ -249,7 +242,8 @@ class SiteContractTests(unittest.TestCase):
 
         publications = collections["publications"]
         self.assertFalse(publications["operations"]["create"])
-        self.assertEqual(publications["view"]["node"]["filename"], "index.md")
+        self.assertEqual(publications["view"]["layout"], "list")
+        self.assertNotIn("node", publications["view"])
         publication_fields = {
             field["name"]: field for field in publications["fields"]
         }
