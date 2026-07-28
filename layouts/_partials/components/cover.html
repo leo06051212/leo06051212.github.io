@@ -1,0 +1,17 @@
+{{/* Render the same direct cover selected for Blog and Talks cards. */}}
+{{ $cover_url := "" }}
+{{ if or (eq .Type "blog") (eq .Type "events") }}
+  {{ $cover_url = partial "functions/resolve_content_cover_url.html" . }}
+{{ end }}
+{{ with $cover_url }}
+  {{ $src := . }}
+  {{ if not (or (strings.HasPrefix $src "http://") (strings.HasPrefix $src "https://")) }}{{ $src = $src | relURL }}{{ end }}
+  <div class="article-cover relative h-64 w-full overflow-hidden md:h-80">
+    <img
+      src="{{ $src }}"
+      alt="{{ $.Title | plainify }} cover image"
+      class="h-full w-full object-cover object-center"
+      fetchpriority="high"
+      loading="eager">
+  </div>
+{{ end }}

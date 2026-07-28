@@ -348,6 +348,23 @@ class SiteContractTests(unittest.TestCase):
         self.assertIn("findRE $pattern (.Params.abstract", resolver)
         self.assertIn("return $cover_url", resolver)
 
+    def test_resolved_covers_are_cropped_not_stretched(self):
+        for path in [
+            "layouts/_partials/views/card.html",
+            "layouts/_partials/components/cover.html",
+        ]:
+            template_path = ROOT / path
+            self.assertTrue(template_path.is_file())
+            template = template_path.read_text(encoding="utf-8")
+            self.assertIn(
+                'partial "functions/resolve_content_cover_url.html"', template
+            )
+            self.assertIn("object-cover", template)
+            self.assertNotIn("object-fill", template)
+        card = (ROOT / "layouts/_partials/views/card.html").read_text(encoding="utf-8")
+        self.assertIn('eq $item.Type "blog"', card)
+        self.assertIn('eq $item.Type "events"', card)
+
     def test_owner_approved_portrait_is_canonical(self):
         from hashlib import sha256
         from PIL import Image
