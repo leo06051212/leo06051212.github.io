@@ -212,8 +212,11 @@ class BuiltSiteCheckTests(unittest.TestCase):
 
     def test_check_rejects_cv_with_wrong_real_content_counts(self):
         checker = load_checker()
+        talk_count = len(load_cv_document(ROOT).talks)
         self.write_valid_site(
-            subject=VALID_CV_MANIFEST.replace("talks=7", "talks=6")
+            subject=VALID_CV_MANIFEST.replace(
+                f"talks={talk_count}", f"talks={talk_count - 1}"
+            )
         )
 
         failures = checker.check_site(

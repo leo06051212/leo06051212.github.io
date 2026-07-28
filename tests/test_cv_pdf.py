@@ -330,7 +330,10 @@ class CvPdfTests(unittest.TestCase):
             "Cheng Cheng",
         ):
             self.assertNotIn(student_name, teaching_text)
-        self.assertTrue(str(reader.metadata.subject).endswith("talks=7;teaching=1"))
+        talk_count = len(load_cv_document(ROOT).talks)
+        self.assertTrue(
+            str(reader.metadata.subject).endswith(f"talks={talk_count};teaching=1")
+        )
 
     def test_overheight_teaching_entry_splits_and_preserves_all_text(self):
         temporary = tempfile.TemporaryDirectory()

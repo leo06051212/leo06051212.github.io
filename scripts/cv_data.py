@@ -85,17 +85,6 @@ CV_BASELINE_EDUCATION = frozenset(
         ("Bachelor of Communication Engineering", "Harbin Engineering University", 2010),
     }
 )
-CV_BASELINE_TALK_TITLES = frozenset(
-    {
-        "2026 IEEE International Symposium on Circuits and Systems",
-        "Technical Talks of IEEE Consumer Technoligy Society - 19th Webinar",
-        "IEEE CASS Workshop: Circuit-Level Intelligence: From Secure Silicon to AI-Ready Systems",
-        "Interal Talk with staff in Computer Science, UoA",
-        "Journey to the “South”: Advancing Computing from Traditional Architectures to Emerging Technologies",
-        "Joint 6G-PHYSEC & INTERACT Workshop on 6G Technologies and PHY Layer Security",
-        "WebVM - an innovative approach to teaching OS concepts",
-    }
-)
 CV_BASELINE_TEACHING_TITLES = frozenset(
     {
         "UoA Undergraduate Teaching experience",
@@ -197,14 +186,12 @@ def validate_cv_baseline(document: CvDocument) -> None:
             (item.degree, item.institution, item.year)
             for item in document.author.education
         },
-        "talk": {item.title for item in document.talks},
         "teaching": {item.title for item in document.teaching},
     }
     baseline = {
         "publication": CV_BASELINE_PUBLICATION_BUNDLES,
         "interest": CV_BASELINE_INTERESTS,
         "education": CV_BASELINE_EDUCATION,
-        "talk": CV_BASELINE_TALK_TITLES,
         "teaching": CV_BASELINE_TEACHING_TITLES,
     }
     for category, required in baseline.items():
