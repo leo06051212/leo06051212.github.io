@@ -1,0 +1,31 @@
+{{/* Resolve an optional direct cover URL without changing page content. */}}
+{{ $cover_url := "" }}
+
+{{/* A CMS-selected cover always wins. */}}
+{{ with .Params.cover.image }}{{ $cover_url = . }}{{ end }}
+
+{{/* Preserve the Blog schema used before `cover.image` was introduced. */}}
+{{ if not $cover_url }}
+  {{ with .Params.image }}
+    {{ if reflect.IsMap . }}
+      {{ $cover_url = .filename | default "" }}
+    {{ else }}
+      {{ $cover_url = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Otherwise use the first Markdown image in body, then abstract. */}}
+{{ $pattern := `!\[[^]]*\]\(([^ )]+)(?:\s+"[^"]*")?\)` }}
+{{ if not $cover_url }}
+  {{ with (findRE $pattern .RawContent 1) }}
+    {{ $cover_url = replaceRE $pattern "$1" (index . 0) }}
+  {{ end }}
+{{ end }}
+{{ if not $cover_url }}
+  {{ with (findRE $pattern (.Params.abstract | default "") 1) }}
+    {{ $cover_url = replaceRE $pattern "$1" (index . 0) }}
+  {{ end }}
+{{ end }}
+
+{{ return $cover_url }}

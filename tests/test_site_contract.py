@@ -332,6 +332,22 @@ class SiteContractTests(unittest.TestCase):
                     self.assertNotIn("resume", normalized)
                     self.assertNotIn("cv upload", normalized)
 
+    def test_image_cover_resolver_contract(self):
+        resolver_path = ROOT / "layouts/_partials/functions/resolve_content_cover_url.html"
+        self.assertTrue(resolver_path.is_file())
+        resolver = resolver_path.read_text(encoding="utf-8")
+        self.assertLess(
+            resolver.index(".Params.cover.image"), resolver.index(".Params.image")
+        )
+        self.assertLess(resolver.index(".Params.image"), resolver.index(".RawContent"))
+        self.assertLess(
+            resolver.index(".RawContent"), resolver.index(".Params.abstract")
+        )
+        self.assertIn(r'$pattern := `!\[[^]]*\]\(([^ )]+)', resolver)
+        self.assertIn("findRE $pattern .RawContent 1", resolver)
+        self.assertIn("findRE $pattern (.Params.abstract", resolver)
+        self.assertIn("return $cover_url", resolver)
+
     def test_owner_approved_portrait_is_canonical(self):
         from hashlib import sha256
         from PIL import Image
