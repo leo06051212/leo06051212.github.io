@@ -199,6 +199,24 @@ class CvDataTests(unittest.TestCase):
         self.assertFalse(reviews["Imported Draft"].included)
         self.assertEqual(reviews["Imported Draft"].reason, "managed publication is draft")
 
+    def test_talk_uses_event_start_when_cms_record_has_no_date(self):
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        write_frontmatter(
+            root / "content/events/cms-talk.md",
+            {
+                "title": "CMS-created talk",
+                "event_name": "Example event",
+                "event_start": "2026-07-03T12:00:00Z",
+            },
+        )
+
+        talks = cv_data._load_talks(root / "content/events", root)
+
+        talk = next(item for item in talks if item.title == "CMS-created talk")
+        self.assertEqual(talk.event, "Example event")
+        self.assertEqual(talk.date.isoformat(), "2026-07-03T12:00:00+00:00")
+
     def test_managed_record_requires_final_valid_metadata(self):
         temporary, root = self.make_repo()
         self.addCleanup(temporary.cleanup)

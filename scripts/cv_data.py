@@ -679,13 +679,16 @@ def _load_talks(directory: Path, root: Path) -> tuple[CvTalk, ...]:
         event_value = metadata.get("event")
         if not isinstance(event_value, str) or not event_value.strip():
             event_value = metadata.get("event_name")
+        date_value = metadata.get("date")
+        if date_value is None or (isinstance(date_value, str) and not date_value.strip()):
+            date_value = metadata.get("event_start")
         talks.append(
             CvTalk(
                 title=_required_string(metadata.get("title"), path, "title"),
                 event=_required_string(event_value, path, "event"),
                 venue=_optional_string(metadata.get("venue"), path, "venue"),
                 location=_optional_string(metadata.get("location"), path, "location"),
-                date=_parse_datetime(metadata.get("date"), path, "date"),
+                date=_parse_datetime(date_value, path, "date"),
                 source_url=_source_url(metadata, path),
             )
         )
