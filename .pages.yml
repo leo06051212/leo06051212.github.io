@@ -203,6 +203,18 @@ content:
         type: boolean
       - name: summary
         type: text
+      - name: cover
+        label: Cover image
+        type: object
+        fields:
+          - name: image
+            label: Image
+            type: image
+            options:
+              media: blog_images
+              path: blog
+              extensions: [jpg, png, webp]
+              rename: safe
       - name: abstract
         type: text
       - name: tags
@@ -215,6 +227,12 @@ content:
         default: true
       - name: body
         type: rich-text
+        options:
+          media: blog_images
+          path: blog
+          extensions: [jpg, png, webp]
+          rename: safe
+          switcher: true
 
   - name: blog
     label: Blog Posts
@@ -241,14 +259,18 @@ content:
           format: yyyy-MM-dd
       - name: summary
         type: text
-      - name: image
+      - name: cover
         label: Cover image
-        type: image
-        options:
-          media: blog_images
-          path: blog
-          extensions: [jpg, png, webp]
-          rename: safe
+        type: object
+        fields:
+          - name: image
+            label: Image
+            type: image
+            options:
+              media: blog_images
+              path: blog
+              extensions: [jpg, png, webp]
+              rename: safe
       - name: tags
         type: string
         list: true

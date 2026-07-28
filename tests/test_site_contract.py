@@ -263,31 +263,28 @@ class SiteContractTests(unittest.TestCase):
             fields = {field["name"]: field for field in collections[name]["fields"]}
             self.assertTrue(fields["draft"]["default"])
 
-        blog_fields = {
-            field["name"]: field for field in collections["blog"]["fields"]
+        expected_image_options = {
+            "media": "blog_images",
+            "path": "blog",
+            "extensions": ["jpg", "png", "webp"],
+            "rename": "safe",
         }
-        self.assertIn("image", blog_fields)
-        self.assertEqual(blog_fields["image"]["type"], "image")
-        self.assertFalse(blog_fields["image"].get("required", False))
-        self.assertEqual(
-            blog_fields["image"]["options"],
-            {
-                "media": "blog_images",
-                "path": "blog",
-                "extensions": ["jpg", "png", "webp"],
-                "rename": "safe",
-            },
-        )
-        self.assertEqual(
-            blog_fields["body"]["options"],
-            {
-                "media": "blog_images",
-                "path": "blog",
-                "extensions": ["jpg", "png", "webp"],
-                "rename": "safe",
-                "switcher": True,
-            },
-        )
+        for collection_name in ["talks", "blog"]:
+            fields = {
+                field["name"]: field
+                for field in collections[collection_name]["fields"]
+            }
+            self.assertIn("cover", fields)
+            self.assertEqual(fields["cover"]["type"], "object")
+            cover_fields = {
+                field["name"]: field for field in fields["cover"]["fields"]
+            }
+            self.assertEqual(cover_fields["image"]["type"], "image")
+            self.assertEqual(cover_fields["image"]["options"], expected_image_options)
+            self.assertEqual(
+                fields["body"]["options"],
+                {**expected_image_options, "switcher": True},
+            )
 
         import_fields = {
             field["name"]: field for field in collections["publication_imports"]["fields"]
