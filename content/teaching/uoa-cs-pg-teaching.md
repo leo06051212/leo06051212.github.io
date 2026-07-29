@@ -1,74 +1,61 @@
 ---
 title: UoA Postgraduate Supervision experience
-date: '2023-08-21'
-summary: ''
+date: 2023-08-21
 authors:
-- me
+  - me
 tags:
-- Teaching
+  - Teaching
+  - Supervision
 draft: false
 teaching_type: Postgraduate supervision
 venue: The University of Auckland, School of Computer Science
 location: Auckland, New Zealand
 ---
+# Doctor of Philosophy in Computer Science
 
-Doctor of Philosophy in Computer Science
-======
-Xu Chen (2025- Now)
-------
->Research on Neural Network Circuit and Computing-in-Memory Accelerator Based on Memristor
+## Yulin Fu (2025–Present)
 
-Jiale Li (2023- Now)
-------
->The Computer Architecture for Edge Artificial Intelligence
+> Optimizing Large Language Models for Edge Devices: A Hardware-Software Co-Design Approach on FPGA
 
-Zhihang Liu (2023- Now)
-------
->Hardware Acceleration of Deep-learning Algorithm on FPGA for Edge Device
+## Jianglan Zhu (2025–Present)
 
-Zongcheng Yue (2022- Now)
-------
->Computational Architecture for Intelligent Edge Computing
+> FPGA-Based Architectures for Image Denoising: Algorithm-Hardware Co-Design and Optimisation
 
-Yulin Fu (2025–Present)
-------
->Optimizing Large Language Models for Edge Devices: A Hardware-Software Co-Design Approach on FPGA
+## Xu Chen (2025- Present)
 
-Tingjiang Tan (2026–Present)
-------
->Hardware/Software Co-Design for FPGA-Based AI Acceleration
+> Research on Neural Network Circuit and Computing-in-Memory Accelerator Based on Memristor
 
-Brian Zhong (2019- 2025, Graduated)
-------
->A Comprehensive Study on RISC-V's Applications to AIoT Endpoint SoCs
+## Jiale Li (2023- Present)
 
-Master of Science (Research)
-======
-Taojingnan Wang (2025–2026, Graduated)
-------
-Ziyuan Zhang (2025–2026, Graduated)
-------
-Chenge Gao (2025–2026, Graduated)
-------
-Cheng Cheng (2025–2026, Graduated)
-------
+> The Computer Architecture for Edge Artificial Intelligence
 
-Yulin Fu (2024- 2025, Graduated)
-------
->FPGA-Adapted Neural Network Models for Low-Latency, High-Accuracy Image recognition: An Integrated Approach
+## Zhihang Liu (2023- Present)
 
-Dongwei Yan (2024- 2025, Graduated)
-------
->Effective Progressive Quantization: Enhancing Residual Neural Networks with Ultra-Low Precision Validation on ResNet18 and ResNet50
+> Hardware Acceleration of Deep-learning Algorithm on FPGA for Edge Device
 
-Master of Information and Technology (Internship)
-======
+## Dr. Zongcheng Yue (2022- 2026)
 
-Han(Olivia) Li (2023-2024)
-------
+> Computational Architecture for Intelligent Edge Computing
 
-Roshan Shaheen (2023-2024)
-------
+## Tingjiang Tan (2026–Present)
 
-Rupak Lingwal (2023-2024)
-------
+> Hardware/Software Co-Design for FPGA-Based AI Acceleration
+
+## Dr. Brian Zhong (2019- 2025, Graduated)
+
+> A Comprehensive Study on RISC-V's Applications to AIoT Endpoint SoCs
+
+# Master of Science (Research)
+
+## Taojingnan Wang (2025–2026, Graduated)
+
+## Ziyuan Zhang (2025–2026, Graduated)
+
+## Chenge Gao (2025–2026, Graduated)
+
+## Cheng Cheng (2025–2026, Graduated)
+
+## Yulin Fu (2024- 2025, Graduated)
+
+## Dongwei Yan (2024- 2025, Graduated)
+
