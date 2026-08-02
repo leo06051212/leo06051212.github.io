@@ -169,6 +169,47 @@ class CvDataTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.addCleanup(os.rmdir, path)
 
+    def test_cv_role_overrides_public_role_when_present(self):
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        author = author_record()
+        author["role"] = "Tenure-Track Assistant Professor"
+        author["cv_role"] = "Lecturer in Computer Science, University of Auckland"
+        (root / "data/authors/me.yaml").write_text(
+            yaml.safe_dump(author, sort_keys=False), encoding="utf-8"
+        )
+
+        document = load_cv_document(root)
+
+        self.assertEqual(
+            document.author.role, "Lecturer in Computer Science, University of Auckland"
+        )
+
+    def test_cv_role_falls_back_to_public_role_when_absent(self):
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        author = author_record()
+        author["role"] = "Tenure-Track Assistant Professor"
+        (root / "data/authors/me.yaml").write_text(
+            yaml.safe_dump(author, sort_keys=False), encoding="utf-8"
+        )
+
+        document = load_cv_document(root)
+
+        self.assertEqual(document.author.role, "Tenure-Track Assistant Professor")
+
+    def test_present_cv_role_must_be_a_non_empty_string(self):
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        author = author_record()
+        author["cv_role"] = ""
+        (root / "data/authors/me.yaml").write_text(
+            yaml.safe_dump(author, sort_keys=False), encoding="utf-8"
+        )
+
+        with self.assertRaisesRegex(ValueError, r"cv_role.*non-empty string"):
+            load_cv_document(root)
+
     def test_migrated_draft_is_included_but_managed_draft_is_excluded(self):
         temporary, root = self.make_repo()
         self.addCleanup(temporary.cleanup)

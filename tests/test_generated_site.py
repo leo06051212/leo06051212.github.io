@@ -116,6 +116,12 @@ def parse_generated_page(path: Path) -> GeneratedContentParser:
 
 
 class GeneratedSiteTests(unittest.TestCase):
+    def test_homepage_uses_recruitment_facing_academic_role(self):
+        text = parse_generated_page(ROOT / "public/index.html").text
+
+        self.assertIn("Tenure-Track Assistant Professor", text)
+        self.assertNotIn("Lecturer in Computer Science", text)
+
     def test_cv_cta_uses_interface_font(self):
         homepage = (ROOT / "public/index.html").read_text(encoding="utf-8")
         parser = GeneratedHomepageParser()

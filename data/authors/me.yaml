@@ -10,10 +10,11 @@ name:
   pronouns: he/him
 postnominals:
   - PhD
-role: Lecturer in Computer Science
+role: Tenure-Track Assistant Professor
+cv_role: Lecturer in Computer Science, University of Auckland
 bio: |
-  Sean Longyu Ma is a Lecturer in the School of Computer Science at the
-  University of Auckland. His research focuses on FPGA-based computing,
+  Sean Longyu Ma is a tenure-track faculty member in the School of Computer
+  Science at the University of Auckland. His research focuses on FPGA-based computing,
   RISC-V customisation, high-level synthesis, and heterogeneous computing.
 affiliations:
   - name: The University of Auckland

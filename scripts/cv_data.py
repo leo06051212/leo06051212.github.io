@@ -377,12 +377,15 @@ def _load_author(path: Path) -> CvAuthor:
             )
         )
 
+    cv_role_field = "cv_role" if "cv_role" in loaded else "role"
+    cv_role_value = loaded.get(cv_role_field)
+
     return CvAuthor(
         display_name=display_name,
         postnominals=_string_tuple(
             loaded.get("postnominals"), path, "postnominals"
         ),
-        role=_required_string(loaded.get("role"), path, "role"),
+        role=_required_string(cv_role_value, path, cv_role_field),
         profile=_required_string(loaded.get("bio"), path, "bio"),
         affiliation=affiliation,
         affiliation_url=affiliation_url,

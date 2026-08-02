@@ -63,7 +63,11 @@ class SiteContractTests(unittest.TestCase):
     def test_owner_contract(self):
         owner = self.load_yaml("data/authors/me.yaml")
         self.assertEqual(owner["name"]["display"], "Dr Sean Longyu Ma")
-        self.assertEqual(owner["role"], "Lecturer in Computer Science")
+        self.assertEqual(owner["role"], "Tenure-Track Assistant Professor")
+        self.assertEqual(
+            owner["cv_role"],
+            "Lecturer in Computer Science, University of Auckland",
+        )
         urls = {link["url"] for link in owner["links"]}
         self.assertIn("https://orcid.org/0000-0002-3350-004X", urls)
         self.assertIn("https://scholar.google.com/citations?user=zDtLcAUAAAAJ&hl=en", urls)

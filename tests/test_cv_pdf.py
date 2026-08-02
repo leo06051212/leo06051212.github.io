@@ -117,6 +117,31 @@ class CvPdfTests(unittest.TestCase):
         self.assertEqual(result.page_count, len(reader.pages))
         self.assertGreater(result.byte_count, 10_000)
 
+    def test_pdf_uses_cv_role_instead_of_public_role(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        root = Path(temporary.name)
+        self._write_minimal_repo(root)
+        author_path = root / "data/authors/me.yaml"
+        author = yaml.safe_load(author_path.read_text(encoding="utf-8"))
+        author["role"] = "Tenure-Track Assistant Professor"
+        author["cv_role"] = "Lecturer in Computer Science, University of Auckland"
+        author_path.write_text(yaml.safe_dump(author, sort_keys=False), encoding="utf-8")
+        portrait = root / "portrait.jpg"
+        Image.new("RGB", (600, 800), "#1d2939").save(portrait, "JPEG")
+        output = root / "cv-role.pdf"
+
+        render_cv_pdf(
+            load_cv_document(root),
+            portrait,
+            output,
+            generated_on=date(2026, 8, 3),
+        )
+
+        text = "\n".join(page.extract_text() or "" for page in PdfReader(output).pages)
+        self.assertIn("Lecturer in Computer Science, University of Auckland", text)
+        self.assertNotIn("Tenure-Track Assistant Professor", text)
+
     def test_validate_pdf_rejects_obsolete_teaching_supervision_heading(self):
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
