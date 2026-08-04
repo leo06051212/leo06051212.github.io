@@ -13,8 +13,8 @@ location: Auckland, New Zealand
 ---
 # Doctor of Philosophy in Computer Science
 
-## [Yulin Fu][yulin] (2025–Present)
-[yulin]: https://yulinfu.org/ "Yulin Fu 官方网站"
+## [Yulin Fu](https://yulinfu.org/ "Yulin Fu 官方网站") (2025–Present)
+
 > Optimizing Large Language Models for Edge Devices: A Hardware-Software Co-Design Approach on FPGA
 
 ## Jianglan Zhu (2025–Present)
