@@ -159,7 +159,6 @@ class SiteContractTests(unittest.TestCase):
         for detail in (
             "Postgraduate supervision",
             "Doctor of Philosophy in Computer Science",
-            "Yulin Fu (2025–Present)",
             "Optimizing Large Language Models for Edge Devices: A Hardware-Software Co-Design Approach on FPGA",
             "Tingjiang Tan (2026–Present)",
             "Hardware/Software Co-Design for FPGA-Based AI Acceleration",
@@ -170,7 +169,46 @@ class SiteContractTests(unittest.TestCase):
             "Yulin Fu (2024- 2025, Graduated)",
         ):
             self.assertIn(detail, text)
+        self.assertRegex(
+            text,
+            r"## \[Yulin Fu\]\(https://yulinfu\.org/.*\) \(2025–Present\)",
+        )
         self.assertNotIn("Chen Chen", text)
+
+    def test_open_day_blog_is_published_with_a_cover_and_event_details(self):
+        path = ROOT / "content/blog/2026-08-29-uoa-open-day-interactive-llm-demo.md"
+        self.assertTrue(path.is_file(), path)
+        metadata = self.load_frontmatter(path)
+        self.assertEqual(
+            metadata.get("title"),
+            "University of Auckland Open Day 2026: An Interactive LLM Demo",
+        )
+        self.assertEqual(metadata.get("date").isoformat(), "2026-08-29")
+        self.assertFalse(metadata.get("draft"))
+        self.assertEqual(
+            metadata.get("cover", {}).get("image"),
+            "/uploads/blog/uoa-open-day-2026-interactive-llm-demo.jpg",
+        )
+        self.assertTrue(
+            (
+                ROOT
+                / "static"
+                / metadata["cover"]["image"].removeprefix("/")
+            ).is_file()
+        )
+        self.assertEqual(
+            metadata.get("tags"),
+            ["Open Day", "LLM", "FPGA", "GPU", "Outreach"],
+        )
+
+        text = path.read_text(encoding="utf-8")
+        for detail in (
+            "Saturday, 29 August 2026",
+            "GPU–FPGA prefill–decode (PD) separation",
+            "Yulin Fu and Jianglan Zhu",
+            "![University of Auckland Open Day 2026](/uploads/blog/uoa-open-day-2026-interactive-llm-demo.jpg)",
+        ):
+            self.assertIn(detail, text)
 
     def test_production_is_indexable(self):
         hook = ROOT / "layouts/_partials/hooks/head-end/noindex.html"
