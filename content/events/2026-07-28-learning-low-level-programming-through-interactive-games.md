@@ -33,6 +33,7 @@ abstract: >-
   multi-architecture design prepares students for the instruction sets they will
   actually encounter in practice.
 tags:
+  - Internal Talk
   - TLACS
 featured: false
 draft: false

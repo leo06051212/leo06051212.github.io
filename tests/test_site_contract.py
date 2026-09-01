@@ -210,6 +210,26 @@ class SiteContractTests(unittest.TestCase):
         ):
             self.assertIn(detail, text)
 
+    def test_requested_internal_talks_use_consistent_tags(self):
+        expected_tags = {
+            "content/events/2024-06-14-talk-1.md": ["Internal Talk", "TLACS"],
+            "content/events/2026-07-28-learning-low-level-programming-through-interactive-games.md": [
+                "Internal Talk",
+                "TLACS",
+            ],
+            "content/events/2025-08-08-talk-1.md": ["Internal Talk"],
+        }
+        for relative_path, tags in expected_tags.items():
+            metadata = self.load_frontmatter(ROOT / relative_path)
+            self.assertEqual(metadata.get("tags"), tags, relative_path)
+
+        for relative_path in [
+            "content/events/2024-06-14-talk-1.md",
+            "content/events/2026-07-28-learning-low-level-programming-through-interactive-games.md",
+        ]:
+            metadata = self.load_frontmatter(ROOT / relative_path)
+            self.assertEqual(metadata.get("event_name"), "TLACS", relative_path)
+
     def test_production_is_indexable(self):
         hook = ROOT / "layouts/_partials/hooks/head-end/noindex.html"
         self.assertNotIn(
