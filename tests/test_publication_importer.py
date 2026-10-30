@@ -954,6 +954,24 @@ class PublicationImporterTests(unittest.TestCase):
         self.assertEqual(fields["eid"], "e100_1")
         self.assertEqual(fields["publisher"], "IEEE & ACM")
 
+    def test_bibtex_keys_distinguish_papers_with_same_author_year_and_title_prefix(self):
+        record = {
+            "title": "A Market-Aligned Reinforcement Learning Framework",
+            "authors": ["Zhihang Liu", "me"],
+            "publication_date_parts": [2026, 6, 22],
+            "publication_types": ["paper-conference"],
+            "publication": {"name": "2026 IJCNN"},
+            "hugoblox": {"ids": {"doi": "10.1109/ijcnn69854.2026.11729208"}},
+        }
+        first_key = parse_generated_bibtex(render_bibtex(record))[1]
+        record["title"] = "A Theoretical Analysis of Migration Strength Selection"
+        record["hugoblox"]["ids"]["doi"] = "10.1109/ijcnn69854.2026.11728525"
+        second_key = parse_generated_bibtex(render_bibtex(record))[1]
+        self.assertNotEqual(first_key, second_key)
+
+        record["hugoblox"]["ids"]["doi"] = "10.1109/IJCNN69854.2026.11728525"
+        self.assertEqual(second_key, parse_generated_bibtex(render_bibtex(record))[1])
+
     def test_bibtex_maps_every_allowed_publication_type(self):
         expected = {
             "article-journal": ("article", "journal"),

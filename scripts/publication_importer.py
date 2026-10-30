@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from hashlib import sha256
 import json
 import os
 import re
@@ -358,9 +359,11 @@ def render_bibtex(record: dict[str, Any]) -> str:
     authors = record.get("authors", [])
     title = record.get("title", "")
     first_author = authors[0].split()[-1] if authors else "import"
+    doi_suffix = sha256(doi.strip().casefold().encode("utf-8")).hexdigest()[:12]
     key = (
         f"{slugify(first_author)}{year}"
         f"{slugify(title).split('-')[0] if title else 'record'}"
+        f"-{doi_suffix}"
     )
     venue = record["publication"]["name"]
     publication_type = record["publication_types"][0]
