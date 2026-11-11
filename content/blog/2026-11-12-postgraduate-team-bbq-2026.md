@@ -1,6 +1,6 @@
 ---
 title: Postgraduate Team BBQ 2026
-date: 2026-11-12
+date: '2026-11-12T00:00:00+13:00'
 summary: "A year-end BBQ with Bruce Sham, our PhD and master's students, and visitors."
 authors:
   - me
